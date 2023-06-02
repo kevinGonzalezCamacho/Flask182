@@ -1,0 +1,82 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+body {
+    font-family: Arial, sans-serif;
+    margin: 30px;
+    background-image: url('fondoadmi.webp');
+    background-size: cover;
+    background-position: center;
+  }
+
+h1 {
+  text-align: center;
+}
+
+form {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+label {
+  display: block;
+  margin-top: 30px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 5px;
+}
+.input-container {
+    position: relative;
+  }
+  
+  .btn {
+    padding: 8px 12px;
+    background-color: #08e6ff;
+    border: none;
+    border-radius: 4px;
+    color: #232121;
+    cursor: pointer;
+    font-size: 12px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+
+.input-container .btn:hover {
+    background-color: #ee0303;
+    color: #000000;
+  }
+
+  @keyframes btnAnimation {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  .registrar {
+    animation: btnAnimation 3s infinite;
+  }
+  
+  .consultar {
+    animation: btnAnimation 3s infinite 0.2s;
+  }
+  
+  .actualizar {
+    animation: btnAnimation 3s infinite 0.4s;
+  }
+  .eliminar {
+    animation: btnAnimation 3s infinite 0.4s;
+  }
+  

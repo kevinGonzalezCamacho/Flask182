@@ -1,0 +1,104 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 30px;
+    background-image: url('fondoadmi.webp');
+    background-size: cover;
+    background-position: center;
+  }
+
+.container {
+    width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    
+  }
+  
+  .container h1 {
+    text-align: center;
+  }
+  
+  .container .section {
+    margin-bottom: 20px;
+  }
+  
+  .container h2 {
+    margin-bottom: 10px;
+  }
+  
+  .container label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .container input[type="date"],
+  .container input[type="number"] {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .container input[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #915ee4;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  
+  
+  .container .receta-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .container .section textarea {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .container .receta-container a {
+    display: block;
+    margin-top: 10px;
+  }
+  
+
+  .input-container {
+    position: relative;
+  }
+  
+  .btn {
+    padding: 8px 12px;
+    background-color: #29939f;
+    border: none;
+    border-radius: 4px;
+    color: #232121;
+    cursor: pointer;
+    font-size: 15px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+.input-container .btn:hover {
+    background-color: #ee0303;
+    color: #000000;
+  }
+
+  @keyframes btnAnimation {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  .Guardar {
+    animation: btnAnimation 1s infinite;
+  }
+  

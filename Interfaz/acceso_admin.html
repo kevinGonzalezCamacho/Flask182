@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Administracion Medico </title>
+  <link rel="stylesheet" type="text/css" href="estilo_acceso_admi.css">
+</head>
+<body>
+  <h1>Administración de Usuarios</h1>
+
+  <form action="#" method="POST">
+    <label for="rfc">RFC:</label>
+    <input type="text" id="rfc" name="rfc" required>
+
+    <label for="nombre">Nombre Completo:</label>
+    <input type="text" id="nombre" name="nombre" required>
+
+    <label for="cedula">Cedula Profesional:</label>
+    <input type="text" id="cedula" name="cedula" required>
+
+    <label for="correo">Correo:</label>
+    <input type="email" id="correo" name="correo" required>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+
+    <label for="rol">Rol:</label>
+    <select id="rol" name="rol">
+      <option value="Medico Admin">Medico Admin</option>
+      <option value="Medico">Medico</option>
+    </select>
+
+    <div class="button-container">
+        <input type="submit" value="Registrar" class="btn registrar">
+        <input type="button" value="Consultar" class="btn consultar">
+        <input type="button" value="Actualizar" class="btn actualizar">
+        <input type="button" value="Eliminar" class="btn eliminar">
+      </div>
+  </form>
+</body>
+</html>

@@ -1,0 +1,68 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  background-image: url('medi.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  background: #6fb9eb;
+  text-align: center;
+  padding: 15px 20px;
+  box-shadow: 0 15px 20px rgba(228, 76, 192, 0.9);
+}
+
+form .title {
+  color: #000000;
+  font-size: 35px;
+  font-weight: 800;
+  margin-bottom: 30px;
+}
+
+form label {
+  margin-bottom: 35px;
+}
+
+form label .fa-solid {
+  font-size: 25px;
+  color: #cb232c;
+  margin-right: 15px;
+}
+
+form label input {
+  outline: none;
+  border: none;
+  color: #252525;
+  border-bottom: solid 1px #232321;
+  padding: 0 5px;
+  font-size: 18px;
+}
+
+form label input::placeholder {
+  color: rgba(37, 37, 37, 0.5);
+}
+
+form button {
+  color: #232121;
+  border: none;
+  background: linear-gradient(to right, #a7dcc8, #08ffd6);
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+  

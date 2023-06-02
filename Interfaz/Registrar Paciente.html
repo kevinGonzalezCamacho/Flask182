@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Registrar Paciente</title>
+  <link rel="stylesheet" type="text/css" href="Estilos, registrarPaciente.css">
+</head>
+<body>
+  <h1>Registrar Paciente</h1>
+  <form>
+    <div>
+      <label for="medico">RFC Medico:</label>
+      <input type="text" id="medico" name="medico" required>
+    </div>
+    <div>
+      <label for="nombre">Nombre completo del paciente:</label>
+      <input type="text" id="nombre" name="nombre" required>
+    </div>
+    <div>
+      <label for="fechaNacimiento">Fecha de nacimiento:</label>
+      <input type="date" id="fechaNacimiento" name="fechaNacimiento" required>
+    </div>
+    <div>
+      <label for="enfermedades">Enfermedades crónicas:</label>
+      <textarea id="enfermedades" name="enfermedades"></textarea>
+    </div>
+    <div>
+      <label for="alergias">Alergias:</label>
+      <textarea id="alergias" name="alergias"></textarea>
+    </div>
+    <div>
+      <label for="antecedentes">Antecedentes familiares:</label>
+      <textarea id="antecedentes" name="antecedentes"></textarea>
+    </div>
+    <div class="buttons">
+      <button type="submit" class="btn-registrar">Registrar</button>
+      <button type="button" class="btn-actualizar">Actualizar</button>
+      <button type="button" class="btn-nueva-consulta">Nueva Consulta</button>
+    </div>
+  </form>
+</body>
+</html>

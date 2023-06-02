@@ -1,0 +1,77 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 30px;
+    background-image: url('fondoadmi.webp');
+    background-size: cover;
+    background-position: center;
+  }
+.container {
+  width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.title {
+  text-align: center;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-field {
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+textarea {
+  height: 100px;
+}
+
+.search-button {
+  padding: 10px 20px;
+  margin-top: 10px;
+  font-size: 16px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.input-container {
+    position: relative;
+  }
+  
+  .btn {
+    padding: 8px 12px;
+    background-color: #9ae7f0;
+    border: none;
+    border-radius: 4px;
+    color: #232121;
+    cursor: pointer;
+    font-size: 15px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+.input-container .btn:hover {
+    background-color: #ee0303;
+    color: #000000;
+  }
+
+  @keyframes btnAnimation {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  .Consultar {
+    animation: btnAnimation 1s infinite;
+  }

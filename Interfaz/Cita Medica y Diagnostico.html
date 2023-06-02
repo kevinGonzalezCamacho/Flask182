@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cita Medica y diagnóstico</title>
+  <link rel="stylesheet" type="text/css" href="Estilo_CitaDiagnostico.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Cita Medica y Diagnóstico</h1>
+
+    <form action="#" method="POST">
+      <div class="section">
+        <h2>Exploración</h2>
+        <label for="fecha">Fecha:</label>
+        <input type="date" id="fecha" name="fecha" required>
+
+        <label for="peso">Peso:</label>
+        <input type="number" id="peso" name="peso" required>
+
+        <label for="altura">Altura:</label>
+        <input type="number" id="altura" name="altura" required>
+
+        <label for="temperatura">Temperatura:</label>
+        <input type="number" id="temperatura" name="temperatura" required>
+
+        <label for="latidos">Latidos por minuto:</label>
+        <input type="number" id="latidos" name="latidos" required>
+
+        <label for="saturacion">Saturación de oxígeno:</label>
+        <input type="number" id="saturacion" name="saturacion" required>
+
+        <label for="glucosa">Glucosa:</label>
+        <input type="number" id="glucosa" name="glucosa" required>
+
+        <label for="nacimiento">Fecha de nacimiento:</label>
+        <input type="date" id="nacimiento" name="nacimiento" required>
+      </div>
+
+      <div class="section">
+        <h2>Diagnóstico</h2>
+        <label for="sintomas">Síntomas:</label>
+        <textarea id="sintomas" name="sintomas" required></textarea>
+
+        <label for="diagnostico">Diagnóstico:</label>
+        <textarea id="diagnostico" name="diagnostico" required></textarea>
+
+        <label for="tratamiento">Tratamiento:</label>
+        <textarea id="tratamiento" name="tratamiento" required></textarea>
+
+      </div>
+
+      <div class="button-container">
+        <input type="submit" value="Guardar" class="btn Guardar">
+    </div>
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 30px;
+    background-image: url('fondoadmi.webp');
+    background-size: cover;
+    background-position: center;
+  }
+
+h1 {
+  text-align: center;
+}
+
+form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+div {
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="date"],
+textarea {
+  width: 100%;
+  padding: 5px;
+}
+
+.buttons {
+  text-align: center;
+}
+
+.btn {
+    padding: 8px 12px;
+    background-color: #9ae7f0;
+    border: none;
+    border-radius: 4px;
+    color: #232121;
+    cursor: pointer;
+    font-size: 15px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+.input-container .btn:hover {
+    background-color: #ee0303;
+    color: #000000;
+  }
+
+  @keyframes btnAnimation {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  .btn-registrar {
+    animation: btnAnimation 2s infinite;
+  }
+
+  .btn-actualizar {
+    animation: btnAnimation 3s infinite;
+  }
+  
+  .btn-nueva-consulta {
+    animation: btnAnimation 4s infinite;
+  }
