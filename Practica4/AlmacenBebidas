@@ -1,0 +1,107 @@
+class Bebida:
+    def __init__(self, id_bebida, nombre, clasificacion, marca, precio):
+        self.id = id_bebida
+        self.nombre = nombre
+        self.clasificacion = clasificacion
+        self.marca = marca
+        self.precio = precio
+
+class Almacen:
+    def __init__(self):
+        self.bebidas = []
+
+    def dar_alta_bebida(self):
+        id_bebida = input("Ingrese el ID de la bebida: ")
+        nombre = input("Ingrese el nombre de la bebida: ")
+        clasificacion = input("Ingrese la clasificación de la bebida: ")
+        marca = input("Ingrese la marca de la bebida: ")
+        precio = float(input("Ingrese el precio de la bebida: "))
+        bebida = Bebida(id_bebida, nombre, clasificacion, marca, precio)
+        self.bebidas.append(bebida)
+        print("Bebida agregada correctamente.")
+
+    def dar_baja_bebida(self):
+        id_bebida = input("Ingrese el ID de la bebida que desea dar de baja: ")
+        for bebida in self.bebidas:
+            if bebida.id == id_bebida:
+                self.bebidas.remove(bebida)
+                print("Bebida eliminada correctamente.")
+                return
+        print("No se encontró la bebida con el ID proporcionado.")
+
+    def actualizar_bebida(self):
+        id_bebida = input("Ingrese el ID de la bebida que desea actualizar: ")
+        for bebida in self.bebidas:
+            if bebida.id == id_bebida:
+                nombre = input("Ingrese el nuevo nombre de la bebida: ")
+                clasificacion = input("Ingrese la nueva clasificación de la bebida: ")
+                marca = input("Ingrese la nueva marca de la bebida: ")
+                precio = float(input("Ingrese el nuevo precio de la bebida: "))
+                bebida.nombre = nombre
+                bebida.clasificacion = clasificacion
+                bebida.marca = marca
+                bebida.precio = precio
+                print("Bebida actualizada correctamente.")
+                return
+        print("No se encontró la bebida con el ID proporcionado.")
+
+    def mostrar_bebidas(self):
+        for bebida in self.bebidas:
+            print(f"ID: {bebida.id}")
+            print(f"Nombre: {bebida.nombre}")
+            print(f"Clasificación: {bebida.clasificacion}")
+            print(f"Marca: {bebida.marca}")
+            print(f"Precio: {bebida.precio}")
+            print("------------------------")
+
+    def calcular_precio_total(self):
+        precio_total = sum(bebida.precio for bebida in self.bebidas)
+        print(f"Precio total de todas las bebidas: {precio_total}")
+
+    def mostrar_marcas(self):
+        marcas = set(bebida.marca for bebida in self.bebidas)
+        print("Marcas registradas:")
+        for marca in marcas:
+            print(marca)
+
+    def mostrar_clasificaciones(self):
+        clasificaciones = set(bebida.clasificacion for bebida in self.bebidas)
+        print("Clasificaciones de bebidas:")
+        for clasificacion in clasificaciones:
+            print(clasificacion)
+
+
+# Ejemplo de uso:
+almacen = Almacen()
+
+while True:
+    print("----- MENÚ -----")
+    print("1. Dar de alta una bebida")
+    print("2. Dar de baja una bebida")
+    print("3. Actualizar una bebida")
+    print("4. Mostrar bebidas registradas")
+    print("5. Calcular precio total de las bebidas")
+    print("6. Mostrar marcas registradas")
+    print("7. Mostrar clasificaciones de bebidas")
+    print("8. Salir")
+
+    opcion = input("Seleccione una opción: ")
+
+    if opcion == "1":
+        almacen.dar_alta_bebida()
+    elif opcion == "2":
+        almacen.dar_baja_bebida()
+    elif opcion == "3":
+        almacen.actualizar_bebida()
+    elif opcion == "4":
+        almacen.mostrar_bebidas()
+    elif opcion == "5":
+        almacen.calcular_precio_total()
+    elif opcion == "6":
+        almacen.mostrar_marcas()
+    elif opcion == "7":
+        almacen.mostrar_clasificaciones()
+    elif opcion == "8":
+        break
+    else:
+        print("Opción inválida. Intente nuevamente.")
