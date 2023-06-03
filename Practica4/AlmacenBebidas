@@ -6,6 +6,19 @@ class Bebida:
         self.marca = marca
         self.precio = precio
 
+    def set_nombre(self, nombre):
+        self.nombre = nombre
+
+    def set_clasificacion(self, clasificacion):
+        self.clasificacion = clasificacion
+
+    def set_marca(self, marca):
+        self.marca = marca
+
+    def set_precio(self, precio):
+        self.precio = precio
+
+
 class Almacen:
     def __init__(self):
         self.bebidas = []
@@ -37,10 +50,10 @@ class Almacen:
                 clasificacion = input("Ingrese la nueva clasificación de la bebida: ")
                 marca = input("Ingrese la nueva marca de la bebida: ")
                 precio = float(input("Ingrese el nuevo precio de la bebida: "))
-                bebida.nombre = nombre
-                bebida.clasificacion = clasificacion
-                bebida.marca = marca
-                bebida.precio = precio
+                bebida.set_nombre(nombre)
+                bebida.set_clasificacion(clasificacion)
+                bebida.set_marca(marca)
+                bebida.set_precio(precio)
                 print("Bebida actualizada correctamente.")
                 return
         print("No se encontró la bebida con el ID proporcionado.")
@@ -54,33 +67,51 @@ class Almacen:
             print(f"Precio: {bebida.precio}")
             print("------------------------")
 
-    def calcular_precio_total(self):
+    def calcular_precio_promedio(self):
+        if len(self.bebidas) == 0:
+            print("No hay bebidas para calcular el precio promedio.")
+            return
+
         precio_total = sum(bebida.precio for bebida in self.bebidas)
-        print(f"Precio total de todas las bebidas: {precio_total}")
+        precio_promedio = precio_total / len(self.bebidas)
+        print(f"Precio promedio de todas las bebidas: {precio_promedio}")
 
     def mostrar_marcas(self):
-        marcas = set(bebida.marca for bebida in self.bebidas)
+        marcas = {}
+        for bebida in self.bebidas:
+            marca = bebida.marca
+            if marca in marcas:
+                marcas[marca] += 1
+            else:
+                marcas[marca] = 1
+
         print("Marcas registradas:")
-        for marca in marcas:
-            print(marca)
+        for marca, total in marcas.items():
+            print(f"{marca}: {total}")
 
     def mostrar_clasificaciones(self):
-        clasificaciones = set(bebida.clasificacion for bebida in self.bebidas)
+        clasificaciones = {}
+        for bebida in self.bebidas:
+            clasificacion = bebida.clasificacion
+            if clasificacion in clasificaciones:
+                clasificaciones[clasificacion] += 1
+            else:
+                clasificaciones[clasificacion] = 1
+
         print("Clasificaciones de bebidas:")
-        for clasificacion in clasificaciones:
-            print(clasificacion)
+        for clasificacion, total in clasificaciones.items():
+            print(f"{clasificacion}: {total}")
 
 
-# Ejemplo de uso:
 almacen = Almacen()
 
 while True:
-    print("----- MENÚ -----")
+    print("       MENÚ     ")
     print("1. Dar de alta una bebida")
     print("2. Dar de baja una bebida")
     print("3. Actualizar una bebida")
     print("4. Mostrar bebidas registradas")
-    print("5. Calcular precio total de las bebidas")
+    print("5. Calcular precio promedio de las bebidas")
     print("6. Mostrar marcas registradas")
     print("7. Mostrar clasificaciones de bebidas")
     print("8. Salir")
@@ -96,7 +127,7 @@ while True:
     elif opcion == "4":
         almacen.mostrar_bebidas()
     elif opcion == "5":
-        almacen.calcular_precio_total()
+        almacen.calcular_precio_promedio()
     elif opcion == "6":
         almacen.mostrar_marcas()
     elif opcion == "7":
