@@ -1,0 +1,29 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 30px;
+    background-size: cover;
+    background-position: center;
+  }
+  h1 {
+    text-align: center;
+    color: #F3FF00;
+    
+
+  }
+  table {
+    margin: 0 auto;
+    background-image: url('Fondo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+th, td {
+    padding: 8px;
+}
+
+
+
+
+
+
