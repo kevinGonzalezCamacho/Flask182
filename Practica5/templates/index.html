@@ -25,7 +25,7 @@
 
         <input type="text" name="txtTitulo" placeholder="Escribe titulo">
         <input type="text" name="txtArtista" placeholder="Escribe Artista">
-        <input type="text" name="txtAnio" placeholder="Escribe AÑo">
+        <input type="number" name="txtAnio" placeholder="Escribe AÑo">
 
 
         <button type="submit"> Guardar </button>
@@ -56,7 +56,7 @@
           <td>{{ alb.2 }}</td>
           <td>{{ alb.3 }}</td>
           <td>
-            <a href="#"> Editar</a>
+            <a href="/editar/{{ alb.0 }}"> Editar</a>
             <a href="#"> Eliminar</a>
           </td>
         </tr>
