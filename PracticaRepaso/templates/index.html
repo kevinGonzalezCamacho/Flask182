@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD Frutas</title>
+</head>
+
+<body>
+    {% with mensajes = get_flashed_messages() %}
+      {% if mensajes %}
+      {% for msj in mensajes %}
+        <h3>{{ msj }}</h3>
+      {% endfor %}
+      {% endif %}
+    {% endwith %}
+
+    <br>
+    <br>
+    <center>
+        <h1>Gestión de Frutas</h1> 
+    </center>
+    <br>
+    <br>
+
+    <form action="/agregar_fruta" method="post">
+        <input type="text" name="fruta" placeholder="Fruta">
+        <input type="text" name="temporada" placeholder="Temporada">
+        <input type="number" name="precio" placeholder="Precio">
+        <input type="number" name="stock" placeholder="Stock">
+        <button type="submit">Guardar</button>
+    </form>
+
+    <br>
+    <br>
+    <form action="/consultar_frutas" method="post">
+        <input type="text" name="nombre" placeholder="Nombre de la fruta">
+        <button type="submit">Consultar frutas</button>
+    </form>
+
+    <br>
+    <br>
+    <a href="{{ url_for('consultar_frutas') }}"><button type="button">Consultar registros</button></a>
+</body>
+</html>
