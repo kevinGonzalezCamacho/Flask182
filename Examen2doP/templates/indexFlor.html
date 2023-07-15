@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+
+ <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Floreria </title>
+    <title>Floreria</title>
 </head>
-
 <body>
     {% with mensajes = get_flashed_messages() %}
       {% if mensajes %}
@@ -24,22 +24,34 @@
     <br>
 
     <form action="/agregar_flores" method="post">
-        <input type="text" name="ID" placeholder="ID">
         <input type="text" name="Nombre" placeholder="Nombre">
-        <input type="number" name="cantidad" placeholder="cantidad">
-        <input type="number" name="precio" placeholder="precio">
+        <input type="number" name="cantidad" placeholder="Cantidad">
+        <input type="number" name="precio" placeholder="Precio">
         <button type="submit">Guardar</button>
     </form>
+    
 
     <br>
     <br>
     <form action="/consultar_registros" method="post">
-        <input type="text" name="nombre" placeholder="Nombre de la fror">
+        <input type="text" name="nombre" placeholder="Nombre de la flor">
         <button type="submit">Consultar registros</button>
     </form>
 
     <br>
     <br>
-    <a href="{{ url_for('/consultar_registros') }}"><button type="button">Consultar registros</button></a>
+</body>
+</html>
+
+
+    <br>
+    <br>
+    <form action="/consultar_registros" method="post">
+        <input type="text" name="nombre" placeholder="Nombre de la flor">
+        <button type="submit">Consultar registros</button>
+    </form>
+
+    <br>
+    <br>
 </body>
 </html>

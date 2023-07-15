@@ -13,13 +13,13 @@
         <br>
         <br>
 
-        <form action="/borrar_fruta/{{ flor.0 }}" method="post">
+        <form action="/borrar_flor/{{ flor[0] }}" method="post">
             <input type="text" name="ID" value="{{ flor[1] }}">
             <input type="text" name="Nombre" value="{{ flor[2] }}">
-            <input type="number" name="Cantidad" value="{{ flor[3] }}">
-            <input type="number" name="Precio" value="{{ flor[4] }}">
+            <input type="number" name="cantidad" value="{{ flor[3] }}">
+            <input type="number" name="precio" value="{{ flor[4] }}">
             <button type="submit">Borrar</button>
-            <a href="{{ url_for('index') }}"><button type="button">Cancelar</button></a>
+            <a href="{{ url_for('indexFlor') }}"><button type="button">Cancelar</button></a>
         </form>
     </center>
 </body>

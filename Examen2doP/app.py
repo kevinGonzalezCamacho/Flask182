@@ -12,31 +12,32 @@ app.secret_key = 'mysecretkey'
 mysql = MySQL(app)
 
 @app.route('/')
-def index():
-    return render_template('indexflor.html')
+def indexFlor():
+    return render_template('indexFlor.html')
 
 
 @app.route('/consultar_registros', methods=['POST', 'GET'])
 def consultar_registros():
-        cur = mysql.connection.cursor()
-        cur.execute('SELECT * FROM tbFlores')
-        frutas = cur.fetchall()
-        cur.close()
+    cur = mysql.connection.cursor()
+    cur.execute('SELECT * FROM tbFlores')
+    frutas = cur.fetchall()
+    cur.close()
 
-        return render_template('consultar_Registros.html', frutas=frutas)
+    return render_template('consultar_Registros.html', frutas=frutas)
 
 
-@app.route('/agregar_fruta', methods=['POST'])
+@app.route('/agregar_flores', methods=['POST'])
 def agregar_fruta():
     if request.method == 'POST':
-        ID = request.form['id']
-        Nombre = request.form['nombre']
+        ID = request.form['ID']
+        Nombre = request.form['Nombre']
         Cantidad = request.form['cantidad']
-        Precio = request.form['Precio']
+        Precio = request.form['precio']
 
         cur = mysql.connection.cursor()
-        cur.execute('INSERT INTO tbFlores (ID, Nombre, cantidad, Precio) VALUES (%s, %s, %s, %s)',
-                    (ID, Nombre, Cantidad, Precio))
+        cur.execute('INSERT INTO tbFlores (Nombre, cantidad, precio) VALUES (%s, %s, %s)',
+            (Nombre, Cantidad, Precio))
+
         mysql.connection.commit()
         cur.close()
 
@@ -53,7 +54,7 @@ def eliminar_flor(id):
 
     return render_template('eliminar_flor.html', flor=flor)
 
-@app.route('/borrar_fruta/<int:id>', methods=['POST'])
+@app.route('/borrar_flor/<int:id>', methods=['POST'])
 def borrar_flor(id):
     if request.method == 'POST':
         cur = mysql.connection.cursor()
