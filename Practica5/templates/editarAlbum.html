@@ -1,28 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Actualizar Album</title>
-</head>
-<body>
-    <center>
-    <br>
-    <br>
-    <h1>Actualizar Album</h1>
-    <br>
-    <br>
+{% extends 'plantilla.html' %}
+{% block body %}
 
-    <form action="/actualizar/{{ album.0 }}" method="post">
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card mt-5">
+        <div class="card-header bg-primary text-white text-center">
+          <h1>Actualizar álbum</h1>
+        </div>
+        <div class="card-body">
+          <form action="/actualizar/{{ album.0 }}" method="POST">
 
-        <input type="text" name="txtTitulo" value="{{ album.1 }}">
-        <input type="text" name="txtArtista" value="{{ album.2 }}" >
-        <input type="number" name="txtAnio" value="{{ album.3 }}">
+            <div class="mb-3">
+              <label for="txtTitulo" class="form-label">Título:</label>
+              <input type="text" class="form-control" id="txtTitulo" name="txtTitulo" value="{{ album.1 }}">
+            </div>
 
-        <button type="submit"> Actualizar </button>
-    
-        </form>
-    </center>
-</body>
-</html>
+            <div class="mb-3">
+              <label for="txtArtista" class="form-label">Artista:</label>
+              <input type="text" class="form-control" id="txtArtista" name="txtArtista" value="{{ album.2 }}">
+            </div>
 
+            <div class="mb-3">
+              <label for="txtAnio" class="form-label">Año de publicación:</label>
+              <input type="number" class="form-control" id="txtAnio" name="txtAnio" value="{{ album.3 }}">
+            </div>
+
+            <div class="d-grid gap-2">
+              <button type="submit" class="btn btn-success">Actualizar</button>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

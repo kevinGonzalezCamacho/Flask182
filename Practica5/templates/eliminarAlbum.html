@@ -1,28 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eliminar Album</title>
-</head>
-<body>
-    <center>
-    <br>
-    <br>
-    <h1>Desea eliminar el siguiente Album</h1>
-    <br>
-    <br>
+{% extends 'plantilla.html' %}
+{% block body %}
 
-    <form action="/borrar/{{ album.0 }}" method="post">
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card mt-5">
+        <div class="card-header bg-danger text-white text-center">
+          <h1>Eliminar álbum</h1>
+        </div>
+        <div class="card-body">
+          <form action="/borrar/{{ album.0 }}" method="POST">
 
-        <input type="text" name="txtTitulo" value="{{ album.1 }}">
-        <input type="text" name="txtArtista" value="{{ album.2 }}" >
-        <input type="number" name="txtAnio" value="{{ album.3 }}">
+            <div class="mb-3">
+              <label for="txtTitulo" class="form-label">Título:</label>
+              <input type="text" class="form-control" id="txtTitulo" name="txtTitulo" value="{{ album.1 }}" readonly>
+            </div>
 
-        <button type="submit"> Borrar </button>
-        <a href="{{( url_for('index')) }}"><button type="button"> Cancelar </button></a>
-        </form>
-    </center>
-</body>
-</html>
+            <div class="mb-3">
+              <label for="txtArtista" class="form-label">Artista:</label>
+              <input type="text" class="form-control" id="txtArtista" name="txtArtista" value="{{ album.2 }}" readonly>
+            </div>
 
+            <div class="mb-3">
+              <label for="txtAnio" class="form-label">Año de publicación:</label>
+              <input type="number" class="form-control" id="txtAnio" name="txtAnio" value="{{ album.3 }}" readonly>
+            </div>
+
+            <div class="d-grid gap-2">
+              <input type="submit" name="Eliminar" value="Eliminar" class="btn btn-danger" onclick='return confirmacion()'>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function confirmacion() {
+    var respuesta = confirm("¿Desea eliminar el registro?");
+    if (respuesta == true) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+</script>
+
+{% endblock %}
